@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hw-demo
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      hw: web
+  template:
+    metadata:
+      labels:
+        hw: web
+    spec:
+      containers:
+      - name: hw-site
+        image: hello-world:1.0
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hw-entrypoint
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    hw: web
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 30001

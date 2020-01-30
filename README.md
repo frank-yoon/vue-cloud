@@ -44,3 +44,12 @@ Visit your application in a browser at `localhost:8000`
 ```
 docker container rm --force hw
 ```
+
+---
+
+### Deploying to Kubernetes
+See [Deploying and Checking Your Application](https://docs.docker.com/get-started/part3/).
+```
+kubectl apply -f hw.yaml
+```
+Visit your application in a browser at `localhost:30001`
