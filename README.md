@@ -1,6 +1,6 @@
 # hello-world
 
-## Project setup
+## Project setup with defaults
 ```
 npm install
 ```
